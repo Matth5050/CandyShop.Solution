@@ -26,6 +26,7 @@ namespace CandyShop.Controllers
       return View(_db.Treats.ToList());
     }
 
+    [Authorize(Roles = "Admin")]
     public ActionResult Create()
     {
       ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
