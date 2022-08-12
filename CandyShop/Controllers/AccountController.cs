@@ -8,12 +8,12 @@ namespace CandyShop.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly LibraryContext _db;
+        private readonly CandyShopContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
        
         
-         public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, LibraryContext db)
+         public AccountController (UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager, CandyShopContext db)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -63,8 +63,7 @@ namespace CandyShop.Controllers
                 return View();
             }
         }
-
-
+        
         [HttpPost]
         public async Task<ActionResult> LogOff()
         {
