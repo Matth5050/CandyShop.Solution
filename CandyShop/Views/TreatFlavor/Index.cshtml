@@ -1,0 +1,37 @@
+@{
+  Layout = "_Layout";
+}
+
+@using CandyShop.Models;
+@model dynamic;
+
+<h1>Flavors and Treats</h1>
+
+@if (@Model.TreatFlavor.Count == 0)
+{
+  <h3>No flavors or treats have been added yet!</h3>
+} 
+
+<div class="row">
+  <div class="col-6">
+    <h3>Engineers</h3>
+    @foreach (Flavor flavor in Model.Flavors)
+    {
+        
+        <li>@Html.ActionLink($"{flavor.Name}", "Details", "Flavor", new { id = flavor.FlavorId })</li>
+      
+    }
+  </div>
+  <div class="col-6">
+    <h3>Treats</h3>
+    @foreach (Treat treat in Model.Treats)
+    {
+        <li>@Html.ActionLink($"{treat.Name}", "Details", "Treat", new { id = treat.TreatId })</li>
+    }
+  </div>
+</div>
+
+<br>
+<p>@Html.ActionLink("Add new flavor", "Create", "Flavor")</p>
+<p>@Html.ActionLink("Add new treat", "Create", "Treat")</p>
+<p>@Html.ActionLink("Home", "Index", "Home")</p>
