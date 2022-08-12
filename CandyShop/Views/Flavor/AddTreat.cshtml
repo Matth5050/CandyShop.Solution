@@ -1,0 +1,15 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CandyShop.Models.Flavor;
+
+@using (Html.BeginForm())
+{
+  @Html.HiddenFor(model => model.FlavorId)
+  {
+  @Html.DropDownList("TreatId", "Not Now")
+}}
+
+
+<p>@Html.ActionLink("Flavor List", "Index")</p>
