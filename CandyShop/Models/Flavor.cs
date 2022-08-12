@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 
+
+
 namespace CandyShop.Models
 {
   public class Flavor
