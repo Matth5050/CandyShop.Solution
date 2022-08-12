@@ -1,0 +1,42 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CandyShop.Models.Flavor;
+
+<h1>Flavor Details</h1>
+<hr>
+<h4>Name:</h4> <p> @Html.DisplayFor(model => model.Name)</p>
+
+<h4>Assinged Treats:</h4>
+@if(@Model.JoinEntities.Count == 0)
+{
+  <p>No treat signed out!
+  @Html.ActionLink("Click Here", "AddBook", new { id = Model.FlavorId}) to checkout a book!
+  </p>
+}
+else
+{
+  <ul>
+  @foreach(var join in Model.JoinEntities)
+  {
+    using (Html.BeginForm("DeleteTreat", "Patron"))
+    {
+      @Html.Hidden("joinId", @join.TreatFlavorId)
+      <li>
+        <h4> @join.Treat.Name
+        </h4>
+
+      <input id="btn" type="submit" value="Return Book">
+      </li>
+    }
+  }
+  </ul>
+}
+<hr>
+
+<h6>@Html.ActionLink("Edit Flavor", "Edit", new { id = Model.FlavorId })</h6>
+
+<h6>@Html.ActionLink("Delete Flavor", "Delete", new { id = Model.FlavorId })</h6>
+
+<h6>@Html.ActionLink("Flavor List", "Index", "Flavor")</h6>
