@@ -2,7 +2,11 @@
 @using Microsoft.AspNetCore.Identity
 @model IEnumerable<IdentityRole>
  
-  <h1>All Roles</h1>
+@{
+  Layout = "_Layout";
+}
+
+<h1>All Roles</h1>
 
 @if (Model.Any())
 {
