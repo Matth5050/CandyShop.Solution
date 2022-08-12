@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using CandyShop.ViewModels;
-using Library.Models;
+using CandyShop.Models;
 using Microsoft.AspNetCore.Authorization;
 
 
 
-namespace Library.Controllers
+namespace CandyShop.Controllers
 {
   public class AdministrationController : Controller
   {
