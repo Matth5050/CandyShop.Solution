@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+@using CandyShop.ViewModels
+@model CreateRoleViewModel
+
+<h4>Create New Role</h4>
+@using (Html.BeginForm())
+{
+  @Html.LabelFor(model => model.RoleName)
+  @Html.TextBoxFor(model => model.RoleName)
+
+  <input type="submit" value="Add Role" />
+}
