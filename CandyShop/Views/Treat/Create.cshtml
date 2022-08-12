@@ -1,0 +1,21 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CandyShop.Models.Treat
+
+<h3>Add a new Treat</h3>
+
+@using (Html.BeginForm())
+{
+
+  <h5>Name:</h5>
+  @Html.TextBoxFor(model => model.Name)
+
+  <h5> Assigning this treat flavor(s): </h5>
+  @Html.Label("Flavor")
+  @Html.DropDownList("FlavorId", "Create without assigning")
+
+  <input type="submit" value="Add new Treat" class="btn btn-default" , required/>
+}
+<p>@Html.ActionLink("Treat List", "Index")</p>
