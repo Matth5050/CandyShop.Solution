@@ -7,6 +7,7 @@ using Microsoft.Extensions.DependencyInjection;
 using CandyShop.Models;
 using Microsoft.AspNetCore.Identity;
 
+
 namespace CandyShop
 {
   public class Startup
