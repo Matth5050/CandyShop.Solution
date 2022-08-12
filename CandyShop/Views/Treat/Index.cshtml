@@ -1,0 +1,27 @@
+@{
+  Layout = "_Layout";
+}
+
+@using CandyShop.Models;
+@model IEnumerable<CandyShop.Models.Treat>
+
+<h1> Treat Collection </h1>
+
+@if (Model.Any())
+{
+
+  <ul>
+    @foreach (Treat treat in Model)
+    {
+      <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</li>
+    }
+
+  </ul>
+}
+else
+{
+  <h3>No treats have been added yet!</h3>
+}
+
+<p>@Html.ActionLink("Add new treat", "Create")</p>
+<p>@Html.ActionLink("Search treats", "ShowSearch")</p>
