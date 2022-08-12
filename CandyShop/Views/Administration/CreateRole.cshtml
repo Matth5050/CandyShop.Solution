@@ -8,8 +8,8 @@
 <h4>Create New Role</h4>
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.RoleName)
-  @Html.TextBoxFor(model => model.RoleName)
+  @Html.LabelFor(model => model.RoleName, null, new { @class = "mx-2"})
+  @Html.TextBoxFor(model => model.RoleName, null, new { @class = "mx-2"})
 
   <input type="submit" value="Add Role" />
 }
