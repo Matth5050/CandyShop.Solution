@@ -1,0 +1,22 @@
+@{
+  Layout = "_Layout";
+}
+
+@model CandyShop.Models.Flavor;
+
+<h4>Add a new flavor</h4>
+
+@using (Html.BeginForm())
+{
+  <h2> Flavor Name: </h2>
+  @Html.TextBoxFor(model => model.Name)
+
+  <div class="form-group" >
+  <h2> Assign:</h2>
+  @Html.DropDownList("TreatId", "Unassigned")
+  </div>
+
+  <input id="btn" type="submit" value="Add New Flavor" required>
+}
+
+@Html.ActionLink("Flavor List", "Index")
