@@ -11,6 +11,7 @@ using System.Security.Claims;
 
 namespace CandyShop.Controllers
 {
+  [Authorize]
   public class TreatController : Controller
   {
     private readonly CandyShopContext _db;
@@ -44,17 +45,18 @@ namespace CandyShop.Controllers
         _db.SaveChanges();
       }
       return RedirectToAction("Index");
-  }
+    }
 
-  public ActionResult Details(int id)
-  {
-    var thisTreat = _db.Treats
-      .Include(treat => treat.JoinEntities)
-      .ThenInclude(join => join.Flavor)
-      .FirstOrDefault(treat => treat.TreatId == id);
-    return View(thisTreat);
-  }
+    public ActionResult Details(int id)
+    {
+      var thisTreat = _db.Treats
+        .Include(treat => treat.JoinEntities)
+        .ThenInclude(join => join.Flavor)
+        .FirstOrDefault(treat => treat.TreatId == id);
+      return View(thisTreat);
+    }
 
+   [Authorize(Roles = "Admin")]
    public ActionResult Edit(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
@@ -74,6 +76,7 @@ namespace CandyShop.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize(Roles = "Admin")]
      public ActionResult Delete(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(treat => treat.TreatId == id);
@@ -100,7 +103,6 @@ namespace CandyShop.Controllers
     {
       List<Treat> model = _db.Treats.Where(p => p.Name.ToLower().Contains(searchPhrase.ToLower())).ToList();
       return View("Index", model);
-    }
-    
-}
+    } 
+  }
 }

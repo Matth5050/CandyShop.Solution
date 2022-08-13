@@ -12,6 +12,7 @@ using Microsoft.AspNetCore.Authorization;
 
 namespace CandyShop.Controllers
 {
+  [Authorize]
   public class FlavorController : Controller
   {
     private readonly CandyShopContext _db;
@@ -29,6 +30,7 @@ namespace CandyShop.Controllers
       return View(model);
     }
 
+    [Authorize(Roles = "Admin")]
      public ActionResult Create()
     {
       ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
@@ -57,6 +59,7 @@ namespace CandyShop.Controllers
       return View(thisFlavor);
     }
 
+    [Authorize(Roles = "Admin")]
     public ActionResult Edit(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
@@ -76,6 +79,7 @@ namespace CandyShop.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize(Roles = "Admin")]
       public ActionResult Delete(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
@@ -91,7 +95,7 @@ namespace CandyShop.Controllers
       return RedirectToAction("Index");
     }
 
-     [HttpPost]
+    [HttpPost]
     public ActionResult DeleteTreat(int joinId)
     {
       var joinEntry = _db.TreatFlavors.FirstOrDefault(entry => entry.TreatFlavorId == joinId);
@@ -100,6 +104,7 @@ namespace CandyShop.Controllers
       return RedirectToAction("Index");
     }
 
+    [Authorize(Roles = "Admin")]
       public ActionResult AddTreat(int id)
     {
       var thisFlavor = _db.Flavors.FirstOrDefault(flavor => flavor.FlavorId == id);
