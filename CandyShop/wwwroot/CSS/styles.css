@@ -1,4 +1,3 @@
-
 div#footer {
   position:fixed;
   bottom:0px;
@@ -18,7 +17,7 @@ div#footer {
 
 #header a:hover {
   color:white;
- } 
+} 
 
 h1 {
   color: rgb(0, 0, 0);
