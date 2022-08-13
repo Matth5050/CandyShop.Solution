@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -6,9 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Identity;
 using CandyShop.ViewModels;
 using CandyShop.Models;
-using Microsoft.AspNetCore.Authorization;
-
-
 
 namespace CandyShop.Controllers
 {
@@ -58,6 +54,7 @@ namespace CandyShop.Controllers
       var roles = _roleManager.Roles;
       return View(roles);
     }
+    
     [HttpGet]
     public async Task<IActionResult> EditRoles(string id)
     {
@@ -113,6 +110,7 @@ namespace CandyShop.Controllers
         return View(model);
       }
     }
+
     [HttpGet]
     public async Task<IActionResult> EditUsersInRole(string roleId)
     {
@@ -150,9 +148,9 @@ namespace CandyShop.Controllers
 
       return View(model);
     
-  }
+    }
 
-  [HttpPost]
+    [HttpPost]
     public async Task<IActionResult> EditUsersInRole(List<UserRoleViewModel> model, string roleId) 
     {
 
