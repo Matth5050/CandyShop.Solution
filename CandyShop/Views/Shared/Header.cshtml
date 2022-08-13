@@ -14,7 +14,15 @@
             <a id="navLink" class="nav-link" href="/Flavor">Flavors</a>
           </li>
           <li class="nav-item">
-            <a id="navLink" class="nav-link" href="/Account/Login">LogIn</a>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <p>Hello @Html.ActionLink(@User.Identity.Name, "Index", "Account")</p>
+            }
+            else
+            {
+                <p>@Html.ActionLink("Register", "Register")</p>
+                <p>@Html.ActionLink("Log in", "Login")</p>
+            }
           </li>
         </ul>
       </div>
