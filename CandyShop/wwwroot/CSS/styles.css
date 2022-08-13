@@ -12,23 +12,13 @@ div#footer {
   border-width: 3px;
 }
 
- div#header {
-  position:fixed;
-  top:0px;
-  left:0px;
-  text-align: left;
-  width:100%;
-  color: rgb(255, 255, 255);
+#header {
   background:rgb(255, 113, 5);
-  padding:15px;
-  padding-left: 35px;
-  font-family: 'Mulish';
-  font-weight: 600;
-  font-size: 50px;
-  border-color:rgb(255, 94, 0);
-  border-style: solid;
-  border-width: 3px;
- }
+ } 
+
+#header a:hover {
+  color:white;
+ } 
 
 h1 {
   color: rgb(0, 0, 0);
@@ -68,13 +58,8 @@ a:active {
   text-decoration: none;
 }
 
-body {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 300;
-}
-
 main {
-  margin-top: 200px;
+  margin-top: 100px;
   margin-left: 10%;
   margin-right: 10%;
   text-align: left;
@@ -88,17 +73,23 @@ main {
   border-width: 3px;
 }
 
-.btn {
-  background:rgb(255, 94, 0);
-  border-radius: 5px;
-  color: rgb(255, 255, 255);
-  border-color:rgb(255, 255, 255);
-  border-style: double;
-  border-width: 1px;
+.listRole {
+  display: flex;
+  gap: 20px;
 }
 
-.navLink {
-  font-size: 40pt;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  color:white;
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  border-radius: 5px;
+  color: rgb(0,0,0);
+  border-color:rgb(255,94,0);
+} 
+
+.btn:hover {
+  background-color: rgb(255,94,0);
+  color: white;
+  border-color: white;
 }
