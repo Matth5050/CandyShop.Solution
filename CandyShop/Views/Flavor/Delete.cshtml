@@ -7,9 +7,9 @@
 <h2>Are you sure you want to delete this Flavor?</h2>
 
 <h3>Flavor:</h3>
-@Html.DisplayFor(model => model.Name)
-@using (Html.BeginForm())
-{
-  <input id="btn" type="submit" value="Delete" />
-}
-@Html.ActionLink("Back to flavor List", "Index")
+  @using (Html.BeginForm())
+  {
+    @Html.DisplayFor(model => model.Name)
+    <input class="btn" type="submit" value="Delete" />
+  }
+<p class="my-3">@Html.ActionLink("Back to flavor List", "Index")</p>

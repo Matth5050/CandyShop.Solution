@@ -25,9 +25,8 @@ else
       @Html.Hidden("joinId", @join.TreatFlavorId)
       <li>
         <h4> @join.Treat.Name
+          <input class="btn" type="submit" value="Remove treat from flavor">
         </h4>
-
-      <input id="btn" type="submit" value="Remove treat from flavor">
       </li>
     }
   }

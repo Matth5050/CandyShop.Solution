@@ -12,14 +12,14 @@
 {
   @Html.HiddenFor(model => model.Id)
 
-  @Html.LabelFor(model => model.RoleName)
+  @Html.LabelFor(model => model.RoleName, null, new { @class = "mx-2"})
   @Html.EditorFor(model => model.RoleName)
 
 
-  <input type="submit" value="Save" />
+  <input class="btn ml-2" type="submit" value="Save" />
 }
 
-<div class="card" style="width: 18rem;">
+<div class="card mt-3" style="width: 18rem;">
   <div class ="card-header">
     <h3>Users in this role</h3>
   </div>
