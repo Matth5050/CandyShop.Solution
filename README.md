@@ -94,6 +94,10 @@ Run ```$ dotnet run``` in the terminal.
 </details>
 <br>
 
+### NOTE: To create, edit, and delete flavors or treats you must assign your account to the Admin role. To do this, first create an account, then navigate to admin settings in the bottom left corner of the screen. Next, click "Create Role" and create a role called "Admin". After creating the role click the "Edit Role" button then click the "Add or Remove User" button. Here you can then assign your account to that of Admin. You are also free to change the name of "Admin" to what ever you would like but be sure to change the role authorizations in the controller. For example, in line 33 of the flavour controller, ```[Authorize(Roles = "Admin")]```, the word "Admin" would need to be changed to the same name you designated to the role you created. Additionally you can remove all authorizations completely by simply deleting all intances of ```[Authorize]``` in the controllers.
+<br>
+
+
 This program was built using *`Microsoft .NET SDK 6.0.0`*, and may not be compatible with other versions. 
 
 ---
